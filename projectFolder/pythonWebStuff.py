@@ -27,21 +27,27 @@ def foodComparison():
     quantity2 = request.args.get("quantity2")
     unit2 = request.args.get("unit2")
 
-    waterDiff = waterQuantityDifference(food1, food2, quantity1, quantity2, unit1, unit2);
+    waterDiff = apiMethods.waterQuantityDifference(food1, food2, quantity1, quantity2, unit1, unit2)
 
-
-    return render_template("foodComparison.html")
+    return render_template("foodComparison.html", waterDiff=waterDiff)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
     food = request.args.get("food")
     quantity = request.args.get("quantity")
     unit = request.args.get("unit")
+
+    waterQuantity = apiMethods.getWaterQuantity(food, quantity, unit)
+
     return render_template("getInfoPage.html")
 
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":

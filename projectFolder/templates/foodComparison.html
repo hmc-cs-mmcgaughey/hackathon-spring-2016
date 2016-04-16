@@ -3,7 +3,7 @@
 {% block title %}Compare Two Foods{% endblock %}
 
 {% block body %}
-<form action="/search">
+<form action="/foodComparison">
 
   <div class="container main">
   <div class="row">
@@ -28,6 +28,7 @@
               <input name="food2" type="text" placeholder="Food 2">
               <input name="quantity2" type="text" placeholder="Quantity 2">
               <input name="unit2" type="text" placeholder="Unit 2">
+              <input type="submit" value="Submit">
           </div>
 
         </div>
@@ -36,7 +37,10 @@
 
 </form>
 
-<form action="/compare">
-  
+{% if waterDiff %}
+<div class = "container main">
+  <h2> The water difference exists </h2>
+</div>
+{% endif %}
 
 {% endblock %}
