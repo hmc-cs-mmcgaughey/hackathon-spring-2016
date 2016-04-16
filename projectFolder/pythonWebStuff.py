@@ -20,9 +20,16 @@ def webDoc():
 
 @app.route("/foodComparison")
 def foodComparison():
-    food = request.args.get("food")
-    quantity = request.args.get("quantity")
-    unit = request.args.get("unit")
+    food1 = request.args.get("food1")
+    quantity1 = request.args.get("quantity1")
+    unit1 = request.args.get("unit1")
+    food2 = request.args.get("food2")
+    quantity2 = request.args.get("quantity2")
+    unit2 = request.args.get("unit2")
+
+    waterDiff = waterQuantityDifference(food1, food2, quantity1, quantity2, unit1, unit2);
+
+
     return render_template("foodComparison.html")
 
 @app.route("/getFoodInfo")
@@ -31,6 +38,10 @@ def getFoodInfo():
     quantity = request.args.get("quantity")
     unit = request.args.get("unit")
     return render_template("getInfoPage.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
