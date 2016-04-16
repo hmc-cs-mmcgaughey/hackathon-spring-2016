@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}WaterImpactBase{% endblock %}</title>
-        <!-- Semantic UI CSS -->
-        <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/semantic-ui/2.1.4/semantic.min.css">
-        <!-- Our Overrides and Additions -->
-        <link rel="stylesheet" type="text/css" href="/static/style.css">
 
-        <!--
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}WaterImpactBase{% endblock %}</title>
+    <!-- Semantic UI CSS -->
+    <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/semantic-ui/2.1.4/semantic.min.css">
+    <!-- Our Overrides and Additions -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <!--
               "Find the refence to Bootstrap's stylesheet | This is a style sheet."
 
               Note that why bootstrap is so convenient is that it includes PRE-STYLED
               elements and layouts for you to use.  This file should never be modified.
               Instead, you can override Bootstrap styles in your custom .css file.
         -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Our custom CSS ! -->
-        <link href="/static/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
+    <!-- Our custom CSS ! -->
+    <link href="/static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
 
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    </head>
-    <body>
-      <div id="main-container" class="ui center aligned container">
+</head>
+
+<body>
+    <div id="main-container" class="ui center aligned container">
         {% block body %}{% endblock %}
-      </div>
+    </div>
 
 
-    </body>
+</body>
+
 </html>
