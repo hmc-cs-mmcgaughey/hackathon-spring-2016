@@ -29,14 +29,16 @@ def foodComparison():
 
     waterDiff = apiMethods.waterQuantityDifference(food1, food2, quantity1, quantity2, unit1, unit2)
     firstGreaterThanSecond = (waterDiff > 0)
-
+    waterDiff = abs(waterDiff)
     return render_template("foodComparison.html", waterDiff=waterDiff, firstGreaterThanSecond=firstGreaterThanSecond, food1=food1, food2=food2)
 
 @app.route("/foodCompareVisual")
 def foodCompareVisual():
-    rep = request.args.get("visualChoice")
-
-    return request.args.get("visualChoice")
+    repToUse = request.args.get("visualChoice")
+    waterDiff = request.args.get("waterDiff")
+    waterDiff = abs(float(waterDiff))
+    numReps = apiMethods.showInOtherQuantity(waterDiff,repToUse)
+    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
@@ -61,4 +63,4 @@ def sources():
     return render_template("sources.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)

@@ -88,20 +88,29 @@
   {% if firstGreaterThanSecond %}
     <h1> You would save {{ waterDiff }} gallons of water by choosing {{ food2 }} instead </h1>
   {% else %}
-    <h1> You would be using {{ -waterDiff }} more gallons of water if you chose {{ food2 }} instead of {{ food1 }} </h1>
+    <h1> You would be using {{ waterDiff }} more gallons of water if you chose {{ food2 }} instead of {{ food1 }} </h1>
   {% endif %}
 
 <form name="comparison" action="/foodCompareVisual">
   <select name="visualChoice">
-    <option value="numShowers">10-minute showers</option>
-    <option value="toiletFlushes">Toilet flushes</option>
-    <option value="laundryLoads">Loads of laundry</option>
-    <option value="dishesLoads">Loads of dishes</option>
-    <option value="tapRunningTime">Minutes of leaving a faucet on</option>
+    <option value="Showers">10-minute showers</option>
+    <option value="Toilet">Toilet flushes</option>
+    <option value="Laundry">Loads of laundry</option>
+    <option value="Dishes">Loads of dishes</option>
+    <option value="Tap">Minutes of leaving a faucet on</option>
   </select>
+  <input type="hidden" name="waterDiff" value="{{ waterDiff }}"/>
   <button type="submit">Display!</button>
 </form>
 </div>
+
+{% if repToUse %}
+<div class = "container main">
+  <h1> This is the equivalent of {{ numReps }} {{ repToUse }} : </h1>
+</div>
+
+  {% endif %}
+
 {% endif %}
   <p> &nbsp; </p>
     <p> &nbsp; </p>
