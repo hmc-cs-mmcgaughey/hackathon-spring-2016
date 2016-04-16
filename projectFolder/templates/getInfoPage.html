@@ -3,13 +3,20 @@
 {% block title %}Get Food Info{% endblock %}
 
 {% block body %}
-<form action="/search">
+<form action="/getFoodInfo">
     <div class="ui huge icon input">
         <i class="search icon"></i>
         <input name="food" type="text" placeholder="Food">
         <input name="quantity" type="text" placeholder="Quantity">
         <input name="unit" type="text" placeholder="Unit">
+        <input type="submit" value="Submit">
     </div>
 </form>
+
+{% if waterQuantity %}
+<div class="main container">
+  <h1> Eating {{ quantity }} {{ unit }} of {{ food }} consumes {{ waterQuantity }} gallons of water </h1>
+</div>
+{% endif %}
 
 {% endblock %}
