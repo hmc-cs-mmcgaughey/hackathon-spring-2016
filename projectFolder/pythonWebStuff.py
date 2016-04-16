@@ -50,8 +50,11 @@ def foodCompareVisual():
     food1 = request.args.get("food1")
     food2 = request.args.get("food2")
     waterDiff = abs(float(waterDiff))
+
+    appender = apiMethods.getAppender(repToUse)
+
     numReps = apiMethods.showInOtherQuantity(waterDiff,repToUse)
-    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff, food1=food1, food2=food2)
+    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff, food1=food1, food2=food2, appender=appender)
 
 @app.route("/foodSingleRepVisual")
 def foodSingleRepVisual():
