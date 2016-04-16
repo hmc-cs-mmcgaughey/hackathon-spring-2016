@@ -1,6 +1,6 @@
 
 .img-wrap {
-	background: url(http://www.drinkingwater.com.au/wp-content/uploads/2014/06/jb-water-reverse-osmosis-drinking-water-bg.jpg) no-repeat center center fixed;
+	background: url(http://www.osbywater.com/wp-content/uploads/layerslider/Home-page-slider/water-splashing.jpg) no-repeat center center fixed;
 	background-size: cover;
 	height:100%;
 }
@@ -22,6 +22,10 @@ ul.nav a:hover { opacity: .2;   background-color: transparent; }
 .intro {
 	padding-top: 0px;
 	color: white;
+}
+
+.main {
+	padding-top:100px;
 }
 
 .portfolio-item {
