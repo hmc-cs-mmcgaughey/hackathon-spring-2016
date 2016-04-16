@@ -85,6 +85,7 @@
 
 {% if waterDiff %}
 <div class = "container main">
+  <center>
   {% if firstGreaterThanSecond %}
     <h1> You would save {{ waterDiff }} gallons of water by choosing {{ food2 }} instead </h1>
   {% else %}
@@ -117,13 +118,16 @@
                     <!-- <button type="button" class="btn btn-secondary btn-lg">Large button</button> -->
 
   </div>
+</center>
 </form>
 </div>
 {% endif %}
 
 {% if repToUse %}
 <div class = "container main">
+  <center>
   <h1> This is the equivalent of {{ numReps }} {{ appender }} </h1>
+</center>
 </div>
 
 
