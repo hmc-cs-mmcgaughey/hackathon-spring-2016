@@ -68,11 +68,11 @@
 
                 <!-- <input type="submit" value="Submit"> -->
 
-                <button id="whaever" class="btn btn-large btn-primary" style="padding: 20px;" value="Submit" type="submit">
+                <!-- <button id="whaever" class="btn btn-large btn-primary" style="padding: 20px;" value="Submit" type="submit">
                     <span>Submit</span>
                     <i class="icon-ok" color="#F0FAFC" style="font-size:30px; vertical-align: middle;"></i>
-                </button>
-
+                </button> -->
+<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 
             </div>
 
@@ -84,7 +84,6 @@
 
 {% if waterDiff %}
 <div class = "container main">
-  <h2> THE WATER DIFFERENCE EXISTS </h2>
   {% if firstGreaterThanSecond %}
     <h1> You would save {{ waterDiff }} gallons of water by choosing {{ food2 }} instead </h1>
   {% else %}
@@ -100,7 +99,20 @@
     <option value="Tap">Minutes of leaving a faucet on</option>
   </select>
   <input type="hidden" name="waterDiff" value="{{ waterDiff }}"/>
-  <button type="submit">Display!</button>
+  <div class="row">
+    <br>
+    <!-- <button type="submit">Display!</button> -->
+
+    <!-- <button id="whaever" class="btn btn-large btn-primary" style="padding: 10px;" value="Display" type="submit">
+        <span>Submit</span>
+        <i class="icon-ok" color="#F0FAFC" style="font-size:30px; vertical-align: middle;"></i>
+    </button> -->
+
+    <button type="submit" class="btn btn-primary btn-lg">Display</button>
+<!-- <button type="button" class="btn btn-secondary btn-lg">Large button</button> -->
+
+
+  </div>
 </form>
 </div>
 
