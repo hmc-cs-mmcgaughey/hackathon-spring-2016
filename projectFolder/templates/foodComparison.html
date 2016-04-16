@@ -64,6 +64,13 @@
   {% else %}
     <h1> You would be using {{ -waterDiff }} more gallons of water if you chose {{ food2 }} instead of {{ food1 }} </h1>
   {% endif %}
+
+<form name="comparison" action="/foodCompareVisual">
+  <select name="visualChoice">
+    <option value="numShowers">Number of 10-minute showers</option>
+  </select>
+  <button type="submit">Compare!</button>
+</form>
 </div>
 {% endif %}
 
