@@ -39,7 +39,12 @@
 
 {% if waterDiff %}
 <div class = "container main">
-  <h2> The water difference exists </h2>
+  <h2> THE WATER DIFFERENCE EXISTS </h2>
+  {% if firstGreaterThanSecond %}
+    <h1> You would save {{ waterDiff }} gallons of water by choosing {{ food2 }} instead </h1>
+  {% else %}
+    <h1> You would be using {{ -waterDiff }} more gallons of water if you chose {{ food2 }} instead of {{ food1 }} </h1>
+  {% endif %}
 </div>
 {% endif %}
 
