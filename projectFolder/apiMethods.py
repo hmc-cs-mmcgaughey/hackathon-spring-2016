@@ -139,12 +139,7 @@ def read_csv_file( csv_file_name ):
         List_of_rows.append( row )        # add the current row _as an element_
 
     return List_of_rows
-def showInOtherQuantity(waterInGallons, other):
 
-    dictionaryToReturn = {'Showers':3.5, 'Toilet':1.6, 'Laundry':waterInGallons/30.0, 'Dishes':waterInGallons/10.0}
-
-    num = dictionaryToReturn[other]
-    return num
 
 def isSimilar(new_content, original_content):
     if abs((new_content/100.0)-(original_content/100.0))<0.0001:
