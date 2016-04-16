@@ -30,7 +30,7 @@ def foodComparison():
     waterDiff = apiMethods.waterQuantityDifference(food1, food2, quantity1, quantity2, unit1, unit2)
     firstGreaterThanSecond = (waterDiff > 0)
 
-    return render_template("foodComparison.html", waterDiff=waterDiff, firstGreaterThanSecond=firstGreaterThanSecond)
+    return render_template("foodComparison.html", waterDiff=waterDiff, firstGreaterThanSecond=firstGreaterThanSecond, food1=food1, food2=food2)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
@@ -40,7 +40,7 @@ def getFoodInfo():
 
     waterQuantity = apiMethods.getWaterQuantity(food, quantity, unit)
 
-    return render_template("getInfoPage.html")
+    return render_template("getInfoPage.html", waterQuantity=waterQuantity, food=food, quantity=quantity, unit=unit)
 
 @app.route("/about")
 def about():
