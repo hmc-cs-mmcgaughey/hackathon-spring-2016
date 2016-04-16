@@ -55,7 +55,7 @@
         </div>
 
 
-<form name="comparison" action="/foodCompareVisual">
+<form name="comparison" action="/foodSingleRepVisual">
   <select name="visualChoice">
     <option value="Showers">10-minute showers</option>
     <option value="Toilet">Toilet flushes</option>
@@ -64,7 +64,9 @@
     <option value="Tap">Minutes of leaving a faucet on</option>
   </select>
   <input type="hidden" name="waterQuantity" value="{{ waterQuantity }}"/>
-  <input type="hidden" name="whichFunction" value="getInfo"/>
+  <input type="hidden" name="quantity" value="{{ quantity }}"/>
+  <input type="hidden" name="unit" value="{{ unit }}"/>
+  <input type="hidden" name="food" value="{{ food }}"/>
   <button type="submit">Display!</button>
 </form>
 </div>
