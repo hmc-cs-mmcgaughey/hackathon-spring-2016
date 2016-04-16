@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}About WaterImpact{% endblock %}
+
+{% block body %}
+<form action="/search">
+
+  <div class="container main">
+  <div class="row">
+      <div class="col-md-12 portfolio-item">
+
+        <div class="ui icon input centered">
+            <i class="search icon"></i>
+            <h2> Food 1: &nbsp; </h2>
+            <input name="food" type="text" placeholder="Food 1">
+            <input name="quantity" type="text" placeholder="Quantity 1">
+            <input name="unit" type="text" placeholder="Unit 1">
+        </div>
+
+<!--
+          <!-- Single button -->
+          <!-- <div class="btn-group">
+              <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  I'd like to... <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+              </ul>
+          </div>
+
+          <h3>
+          <a href="item1.html">Project One</a>
+      </h3>
+          <p>Cronut deep v chia actually. Cardigan pork belly microdosing blog, umami roof party 3 wolf moon shoreditch pinterest marfa man braid gastropub. Try-hard tote bag gluten-free, direct trade forage twee before they sold out.</p> -->
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12 portfolio-item">
+
+        <div class="ui icon input centered">
+            <i class="search icon"></i>
+            <h2> Food 2: &nbsp; </h2>
+            <input name="food" type="text" placeholder="Food 2">
+            <input name="quantity" type="text" placeholder="Quantity 2">
+            <input name="unit" type="text" placeholder="Unit 2">
+        </div>
+      </div>
+  </div>
+  </div>
+
+</form>
+
+{% endblock %}
