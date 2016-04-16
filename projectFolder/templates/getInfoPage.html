@@ -55,6 +55,29 @@
 <div class="main container">
   <h1> Eating {{ quantity }} {{ unit }} of {{ food }} consumes {{ waterQuantity }} gallons of water </h1>
 </div>
+
+
+
+<form name="comparison" action="/foodCompareVisual">
+  <select name="visualChoice">
+    <option value="Showers">10-minute showers</option>
+    <option value="Toilet">Toilet flushes</option>
+    <option value="Laundry">Loads of laundry</option>
+    <option value="Dishes">Loads of dishes</option>
+    <option value="Tap">Minutes of leaving a faucet on</option>
+  </select>
+  <input type="hidden" name="waterDiff" value="{{ waterDiff }}"/>
+  <button type="submit">Display!</button>
+</form>
+</div>
+
+{% if repToUse %}
+<div class = "container main">
+  <h1> This is the equivalent of {{ numReps }} {{ repToUse }} : </h1>
+</div>
+
+  {% endif %}
+
 {% endif %}
 
 {% endblock %}

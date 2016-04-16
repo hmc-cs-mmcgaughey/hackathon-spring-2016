@@ -17,6 +17,17 @@ def webDoc():
     else:
         return render_template("webDoc.html")
 
+@app.route("/home")
+def home():
+    render_template("webDoc.html")
+    compare = request.args.get("compare")
+    info = request.args.get("info")
+    if compare:
+        return render_template("foodComparison.html")
+    elif info:
+        return render_template("getInfoPage.html")
+    else:
+        return render_template("webDoc.html")
 
 @app.route("/foodComparison")
 def foodComparison():
@@ -36,9 +47,11 @@ def foodComparison():
 def foodCompareVisual():
     repToUse = request.args.get("visualChoice")
     waterDiff = request.args.get("waterDiff")
+    food1 = request.args.get("food1")
+    food2 = request.args.get("food2")
     waterDiff = abs(float(waterDiff))
     numReps = apiMethods.showInOtherQuantity(waterDiff,repToUse)
-    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff)
+    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff, food1=food1, food2=food2)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
