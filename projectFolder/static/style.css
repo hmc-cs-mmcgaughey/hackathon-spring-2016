@@ -24,8 +24,14 @@ ul.nav a:hover { opacity: .2;   background-color: transparent; }
 	color: white;
 }
 
+.img{
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+}
+
 .main {
-	padding-top:100px;
+	padding-top:50px;
 }
 
 .portfolio-item {

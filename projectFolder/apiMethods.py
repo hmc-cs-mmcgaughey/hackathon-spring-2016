@@ -13,7 +13,7 @@ def getWaterQuantity(foodName, quantity, unit):
         url = "http://splooshed2.herokuapp.com/food?inputFood=" + foodName + "&inputAmount=" + str(quantity) + "&inputUnit=" + unit
         responseFromQuery = requests.get(url).json()
         waterQuantityInGallons = responseFromQuery['gallons']
-        return float(waterQuantityInGallons)
+        return double(waterQuantityInGallons)
 
     except:
         return 0
@@ -103,5 +103,14 @@ def getNutrientContentOfFood(foodName, nutrient):
     except:
         print("couldnt find")
         return (0,0)
-
+    
     return nutrient_Value
+
+def showInOtherQuantity(waterInGallons, other):
+    
+    dictionaryToReturn = {'Showers':3.5, 'Toilet':1.6, 'Laundry':30.0, 'Dishes':10.0}
+    
+    num = dictionaryToReturn[other]
+    return waterInGallons/num
+
+6
