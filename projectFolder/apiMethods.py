@@ -103,14 +103,14 @@ def getNutrientContentOfFood(foodName, nutrient):
     except:
         print("couldnt find")
         return (0,0)
-    
+
     return nutrient_Value
 
 def showInOtherQuantity(waterInGallons, other):
-    
-    dictionaryToReturn = {'Showers':3.5, 'Toilet':1.6, 'Laundry':30.0, 'Dishes':10.0}
-    
+
+    dictionaryToReturn = {'Showers':3.5, 'Toilet':1.6, 'Laundry':30.0, 'Dishes':10.0, 'Tap':1.5}
+
     num = dictionaryToReturn[other]
     return waterInGallons/num
 
-6
+#6
