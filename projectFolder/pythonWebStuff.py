@@ -63,7 +63,8 @@ def foodSingleRepVisual():
     food = request.args.get("food")
     waterQuantity = abs(float(waterQuantity))
     numReps = apiMethods.showInOtherQuantity(waterQuantity, repToUse)
-    return render_template("getInfoPage.html", waterQuantity = waterQuantity, numReps=numReps, repToUse = repToUse, food = food)
+    appender = apiMethods.getAppender(repToUse)
+    return render_template("getInfoPage.html", waterQuantity = waterQuantity, numReps=numReps, repToUse = repToUse, food = food, appender=appender)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
