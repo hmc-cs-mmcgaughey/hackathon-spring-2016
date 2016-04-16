@@ -99,6 +99,9 @@
     <option value="Tap">Minutes of leaving a faucet on</option>
   </select>
   <input type="hidden" name="waterDiff" value="{{ waterDiff }}"/>
+  <input type="hidden" name="food1" value="{{ food1 }}"/>
+  <input type="hidden" name="food2" value="{{ food2 }}"/>
+  <input type="hidden" name="whichFunction" value="foodCompare"/>
   <div class="row">
     <br>
     <!-- <button type="submit">Display!</button> -->
@@ -118,7 +121,7 @@
 
 {% if repToUse %}
 <div class = "container main">
-  <h1> This is the equivalent of {{ numReps }} {{ repToUse }} : </h1>
+  <h1> This is the equivalent of {{ numReps }} {{ repToUse }} </h1>
 </div>
 
   {% endif %}

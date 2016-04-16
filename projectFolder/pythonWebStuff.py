@@ -45,13 +45,19 @@ def foodComparison():
 
 @app.route("/foodCompareVisual")
 def foodCompareVisual():
+    whichFunction = request.args.get("whichFunction")
     repToUse = request.args.get("visualChoice")
-    waterDiff = request.args.get("waterDiff")
-    food1 = request.args.get("food1")
-    food2 = request.args.get("food2")
-    waterDiff = abs(float(waterDiff))
-    numReps = apiMethods.showInOtherQuantity(waterDiff,repToUse)
-    return render_template("foodComparison.html", numReps = numReps, repToUse=repToUse, waterDiff=waterDiff, food1=food1, food2=food2)
+    if (whichFunction == "foodCompare")
+        waterDiff = request.args.get("waterDiff")
+        food1 = request.args.get("food1")
+        food2 = request.args.get("food2")
+        waterDiff = abs(float(waterDiff))
+        numReps = apiMethods.showInOtherQuantity(waterDiff,repToUse)
+        return render_template("foodComparison.html", whichFunction= whichFunction, numReps = numReps, repToUse=repToUse, waterDiff=waterDiff, food1=food1, food2=food2)
+    else
+        waterQuantity = request.args.get("waterQuantity")
+        numReps = apiMethods.showInOtherQuantity(waterQuantity,repToUse)
+        return render_template("getInfoPage.html", whichFunction=whichFunction, numReps=numReps, repToUse=repToUse,waterQuantity=waterQuantity)
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
