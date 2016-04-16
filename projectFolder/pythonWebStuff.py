@@ -7,7 +7,15 @@ from flask import render_template, request
 
 @app.route("/")
 def webDoc():
-    return render_template("webDoc.html")
+    render_template("webDoc.html")
+    compare = request.args.get("compare")
+    info = request.args.get("info")
+    if compare:
+        return render_template("foodComparison.html")
+    elif info:
+        return render_template("getInfoPage.html")
+    else:
+        return render_template("webDoc.html")
 
 
 @app.route("/foodComparison")
