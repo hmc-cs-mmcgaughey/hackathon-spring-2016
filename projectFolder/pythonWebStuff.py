@@ -10,9 +10,12 @@ def webDoc():
     return render_template("webDoc.html")
 
 
-# @app.route("/foodComparison")
-# def foodComparison():
-#     return render_template("getInfoPage.html")
+@app.route("/foodComparison")
+def foodComparison():
+    food = request.args.get("food")
+    quantity = request.args.get("quantity")
+    unit = request.args.get("unit")
+    return render_template("foodComparison.html")
 
 @app.route("/getFoodInfo")
 def getFoodInfo():
