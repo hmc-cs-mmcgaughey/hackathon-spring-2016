@@ -24,11 +24,11 @@ ul.nav a:hover { opacity: .2;   background-color: transparent; }
 	color: white;
 }
 
-.img{
+/*.img{
     width: 250px;
     height: 250px;
     background-size: cover;
-}
+}*/
 
 .main {
 	padding-top:50px;
