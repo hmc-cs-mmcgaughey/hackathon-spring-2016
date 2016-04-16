@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Get Food Info{% endblock %}
+
+{% block body %}
+<form action="/search">
+    <div class="ui huge icon input">
+        <i class="search icon"></i>
+        <input name="food" type="text" placeholder="Food">
+        <input name="quantity" type="text" placeholder="Quantity">
+        <input name="unit" type="text" placeholder="Unit">
+    </div>
+</form>
+
+{% endblock %}
