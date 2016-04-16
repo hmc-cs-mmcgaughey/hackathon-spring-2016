@@ -5,5 +5,9 @@ import json
 from flask import render_template, request
 
 @app.route("/")
-def index():
-    return render_template("index.html")
+def webDoc():
+    # return "Hello!"
+    return render_template("webDoc.html")
+
+if __name__ == "__main__":
+    app.run()
