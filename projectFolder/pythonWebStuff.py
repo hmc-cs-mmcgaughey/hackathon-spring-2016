@@ -35,7 +35,7 @@ def foodComparison():
 @app.route("/foodCompareVisual")
 def foodCompareVisual():
     rep = request.args.get("visualChoice")
-    
+
     return request.args.get("visualChoice")
 
 @app.route("/getFoodInfo")
