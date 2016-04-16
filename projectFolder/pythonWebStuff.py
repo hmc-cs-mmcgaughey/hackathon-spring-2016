@@ -32,6 +32,12 @@ def foodComparison():
 
     return render_template("foodComparison.html", waterDiff=waterDiff, firstGreaterThanSecond=firstGreaterThanSecond, food1=food1, food2=food2)
 
+@app.route("/foodCompareVisual")
+def foodCompareVisual():
+    rep = request.args.get("visualChoice")
+
+    return request.args.get("visualChoice")
+
 @app.route("/getFoodInfo")
 def getFoodInfo():
     food = request.args.get("food")
