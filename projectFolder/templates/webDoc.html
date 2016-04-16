@@ -2,40 +2,22 @@
 
 {% block title %}WaterImpact{% endblock %}
 
+=======
+{% block title %}WaterImpactHTML{% endblock %}
+{% block body %}
+
 <!DOCTYPE html>
 <!-- This is what a comment looks like ! They won't ruin your website. Use them to keep stuff organized -->
-<html lang="en">
 
 
-<!--The <head> tag is used for your computer to find important files such as style sheets/scripts -->
-<head>
 
-  <!-- Check the top tab of your page ! -->
-  <title>Hi</title>
-
-  <!--
-        "Find the refence to Bootstrap's stylesheet | This is a style sheet."
-
-        Note that why bootstrap is so convenient is that it includes PRE-STYLED
-        elements and layouts for you to use.  This file should never be modified.
-        Instead, you can override Bootstrap styles in your custom .css file.
-  -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Our custom CSS ! -->
-  <link href="/static/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
-
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-
-  </script>
 
 <!-- Be sure to close every open tag ! -->
-</head>
+
 
 
 <!-- The <body> is where all the magic happens -->
-<body class="img-wrap">
+<!-- <body class="img-wrap"> -->
  <!-- <div class="img-wrap"> -->
  <nav class="navbar">
     <div class="container">
@@ -193,6 +175,7 @@
     return Math.floor((Math.random() * upperBound) + lowerBound);
   }
 </script>
-</body>
+{% endblock %}
+<!-- </body>
 
-</html>
+</html> -->
