@@ -18,7 +18,19 @@ def getWaterQuantity(foodName, quantity, unit):
     except:
         return 0
 
-
+def getAppender(prefix):
+	if prefix=="Showers":
+		return 'Showers'
+	elif prefix=="Toilet":
+		return 'toilet flushes'
+	elif prefix=="Laundry":
+		return "laundry rounds"
+	elif prefix=="Dishes":
+		return "typical dishwashes"
+	elif prefix=="Tap":
+		return "minutes of leaving the tap on"
+	else:
+		return 'Things/error'
 
 def waterQuantityDifference(foodName1, foodName2, quantity1, quantity2, unit1, unit2):
     """
