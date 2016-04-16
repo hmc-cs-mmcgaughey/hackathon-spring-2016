@@ -108,8 +108,9 @@ def getNutrientContentOfFood(foodName, nutrient):
 
 def showInOtherQuantity(waterInGallons, other):
 
-    dictionaryToReturn = {'Showers':35, 'Toilet':1.6, 'Laundry':30.0, 'Dishes':10.0, 'Tap':1.5}
+    dictionaryToReturn = {'Showers':35.0, 'Toilet':1.6, 'Laundry':30.0, 'Dishes':10.0, 'Tap':1.5}
     num = dictionaryToReturn[other]
+    print num
     return waterInGallons/num
 
 def read_csv_file( csv_file_name ):
