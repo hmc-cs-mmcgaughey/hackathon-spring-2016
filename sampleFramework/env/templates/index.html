@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Yelp!{% endblock %}
+
+{% block body %}
+<form action="/search">
+    <div class="ui huge icon input">
+        <i class="search icon"></i>
+        <input name="location" type="text" placeholder="Search...">
+    </div>
+</form>
+
+
+{% if businesses %}
+
+<div class="ui link cards centered">
+{% for item in businesses %}
+
+<!-- taken from semantic ui -->
+<div class="card">
+    <div class="image">
+      <img src="{{ item.image_url }}", alt="Yelp image">
+    </div>
+    <div class="content">
+    	<form action="/save" method="post">
+	      <div class="header">
+	      	<input type="hidden" name="image_url" value="{{ item.image_url }}"/>
+	      	<input type="hidden" name="description" value="{{ item.description }}"/>
+	        <input type="hidden" name="name" value="{{ item.name }}"/>
+	        <input type="hidden" name="rating" value="{{ item.rating }}"/>
+	      	<button type="submit">{{ item.name }}</button>
+	      </div>
+	  	</form>
+     	<div class="description">
+        	{{ item.description }}
+      	</div>
+    </div>
+    <div class="extra content">
+    	<img src="{{ item.rating }}">
+    </div>
+  </div>
+
+{% endfor %}
+</div>
+
+{% endif %}
+{% endblock %}
