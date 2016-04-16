@@ -1,4 +1,5 @@
 import requests, json
+api_key = "U6qwIj4pbaXQRdwUejhQGJdR4jh4HjBQqYMaIZac"
 
 def getWaterQuantity(foodName, quantity, unit):
     """inputs: foodName (string) - name of food
@@ -25,36 +26,6 @@ def waterQuantityDifference(foodName1, foodName2):
     
     return abs(waterQuantity1-waterQuantity2)
 
-
-def getNutritionalContent(foodName):
-    
-    url = "http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=DEMO_KEY&nutrients=205&nutrients=204&nutrients=208&nutrients=269"
-    responseFromQuery = requests.get(url).json()
-    
-    allFoods = responseFromQuery['report']['foods']
-    
-    for food in allFoods:
-        if foodName in food['name']:
-            return food
-    
-    return False
-
-
-def getNutritionalContentByType(food, nutrient):
-    
-    if (getNutritionalContent(food)==False):
-        print('food doesnt have any nutritional content??')
-        return False
-    
-    foodData = getNutritionalContent(food)
-    
-    for currentNutrient in foodData['nutrients']:
-        if nutrient in currentNutrient['nutrient']:
-            return (currentNutrient['value'],currentNutrient['unit'])
-    
-    print('couldnt find the nutrient in the food??')
-    return False
-
 def compareWaterAndNutrition(food, nutrient):
     
     water = getWaterQuantity(food, 1, 'g')
@@ -63,4 +34,71 @@ def compareWaterAndNutrition(food, nutrient):
     nutrients = nutrients[0] + ' ' + nutrients[1] #combine the tuple
     water = str(water) + " gallons"
     
-    return(nutrients, water)
+    return (nutrients, water)
+
+
+def getNDBNO(foodName):
+        
+    url = "http://api.nal.usda.gov/ndb/search/?format=json&q=" + foodName + "&sort=n&max=25&offset=0&api_key=" + api_key
+    responseFromQuery = requests.get(url).json()
+    
+    bestFoodResponse = responseFromQuery['list']['item'][0]
+    
+    for foodresponse in responseFromQuery['list']['item']:
+        
+        if len(bestFoodResponse['name']) > len(foodresponse['name']):
+            bestFoodResponse = foodresponse
+
+    
+    
+
+    return bestFoodResponse['ndbno']
+
+def getNutrientID(nutrient):
+    
+    
+    url = "http://api.nal.usda.gov/ndb/list?format=json&lt=n&max=1000&sort=n&start=0&end=1000&api_key=" + api_key
+    responseFromQuery = requests.get(url).json()
+    
+    aMatch = responseFromQuery['list']['item'][0]['id']
+    flag = True;
+    
+    for nutrientResponse in responseFromQuery['list']['item']:
+        
+        if nutrient == nutrientResponse['name']:
+            return nutrientResponse['id']
+        elif nutrient in nutrientResponse['name'] and flag:
+            aMatch = nutrientResponse['id']
+            flag = False
+    
+    if (flag==False):
+        return aMatch
+        
+    return False
+
+
+def getNutrientContentOfFood(foodName, nutrient):
+    
+    food_id = getNDBNO(foodName)
+    #print("ID is", food_id)
+    nutrient_id = getNutrientID(nutrient)
+    #print("nutrient id is", nutrient_id)
+    
+    url = "http://api.nal.usda.gov/ndb/nutrients/?format=json"
+    url += "&api_key=" 
+    url += api_key
+    url += "&ndbno="
+    url += food_id
+    url += "&nutrients=" 
+    url += nutrient_id
+    
+    try:
+        responseFromQuery = requests.get(url).json()
+        nutrient_Value = responseFromQuery['report']['foods'][0]['nutrients'][0]['value']
+        nutrient_Unit = responseFromQuery['report']['foods'][0]['nutrients'][0]['unit']
+        
+    except:
+        print("couldnt find")
+        return (0,0)
+    
+    return nutrient_Value
