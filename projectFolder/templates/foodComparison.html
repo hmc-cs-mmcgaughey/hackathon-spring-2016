@@ -4,6 +4,7 @@
 
 {% block body %}
 <form action="/foodComparison">
+  <body style="background-color:#F0FAFC">
 
   <div class="container main">
   <div class="row">
@@ -28,11 +29,29 @@
               <input name="food2" type="text" placeholder="Food 2">
               <input name="quantity2" type="text" placeholder="Quantity 2">
               <input name="unit2" type="text" placeholder="Unit 2">
-              <input type="submit" value="Submit">
+              <!-- <input type="submit" value="Submit"> -->
           </div>
 
         </div>
       </div>
+
+      <div class="row">
+          <div class="col-md-12 portfolio-item">
+
+            <div class="ui icon input centered">
+
+                <!-- <input type="submit" value="Submit"> -->
+
+                <button id="whaever" class="btn btn-large btn-primary" style="padding: 20px;" name="Submit" type="submit">
+                    <span>Submit</span>
+                    <i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i>
+                </button>
+
+
+            </div>
+
+          </div>
+        </div>
 </div>
 
 </form>
